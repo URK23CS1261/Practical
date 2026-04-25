@@ -3,7 +3,7 @@ name: Github CI & Docker build and push
 on:
   push:
     branches: [ main ]
-  pull-request:
+  pull_request:
     branches: [ main ]
 
 jobs:
