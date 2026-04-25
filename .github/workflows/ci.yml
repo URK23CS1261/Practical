@@ -1,5 +1,4 @@
 name: Github CI & Docker build and push
-
 on:
   push:
     branches: [ main ]
@@ -14,8 +13,8 @@ jobs:
       - name: login with docker cred
         uses: docker/login-action@v5
         with: 
-          username: {{ secrets.DOCKER_USER }}
-          password: {{ secrets.DOCKER_PASS }}
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASS }}
       - name: build the docker image
         run : 'docker build -t $DOCKER_USER/flask-app:latest'
       
